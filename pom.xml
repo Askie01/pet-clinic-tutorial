@@ -9,7 +9,7 @@
     </parent>
     <groupId>com.askie01</groupId>
     <artifactId>pet-clinic</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>pet-clinic</name>
     <description>pet-clinic</description>
@@ -27,8 +27,8 @@
     <scm>
         <!--        <connection/>-->
         <developerConnection>scm:git:https://github.com/Askie01/pet-clinic.git</developerConnection>
-        <tag>pet-clinic-0.0.1</tag>
-        <url />
+        <tag>HEAD</tag>
+        <url></url>
     </scm>
     <properties>
         <java.version>17</java.version>
