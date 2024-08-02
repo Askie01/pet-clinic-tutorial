@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("vet")
 public class VetController {
 
-    @GetMapping("getIndex")
+    @GetMapping("index")
     public String getIndex() {
         return "vet/index";
     }
