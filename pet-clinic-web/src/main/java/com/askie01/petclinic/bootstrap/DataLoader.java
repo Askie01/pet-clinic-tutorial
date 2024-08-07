@@ -4,22 +4,17 @@ import com.askie01.petclinic.model.Owner;
 import com.askie01.petclinic.model.Vet;
 import com.askie01.petclinic.service.OwnerService;
 import com.askie01.petclinic.service.VetService;
-import com.askie01.petclinic.service.map.OwnerServiceMap;
-import com.askie01.petclinic.service.map.VetServiceMap;
+import lombok.Data;
 import lombok.SneakyThrows;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+@Data
 @Component
 public class DataLoader implements CommandLineRunner {
 
     private final OwnerService ownerService;
     private final VetService vetService;
-
-    public DataLoader() {
-        this.ownerService = new OwnerServiceMap();
-        this.vetService = new VetServiceMap();
-    }
 
     /**
      * Callback used to run the bean.
