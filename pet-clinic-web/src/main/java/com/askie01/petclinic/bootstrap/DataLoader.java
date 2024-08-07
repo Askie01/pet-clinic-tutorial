@@ -26,14 +26,12 @@ public class DataLoader implements CommandLineRunner {
     @SneakyThrows
     public void run(String... args) {
         final Owner michaelWeston = new Owner();
-        michaelWeston.setId(1L);
         michaelWeston.setFirstName("Michael");
         michaelWeston.setLastName("Weston");
 
         ownerService.save(michaelWeston);
 
         final Owner fionaGlenanne = new Owner();
-        fionaGlenanne.setId(2L);
         fionaGlenanne.setFirstName("Fiona");
         fionaGlenanne.setLastName("Glenanne");
 
@@ -41,14 +39,12 @@ public class DataLoader implements CommandLineRunner {
         System.out.println("Loaded owners...");
 
         final Vet samAxe = new Vet();
-        samAxe.setId(1L);
         samAxe.setFirstName("Sam");
         samAxe.setLastName("Axe");
 
         vetService.save(samAxe);
 
         final Vet jessiePorter = new Vet();
-        jessiePorter.setId(2L);
         jessiePorter.setFirstName("Jessie");
         jessiePorter.setLastName("Porter");
 
