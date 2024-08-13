@@ -1,8 +1,10 @@
 package com.askie01.petclinic.bootstrap;
 
 import com.askie01.petclinic.model.Owner;
+import com.askie01.petclinic.model.PetType;
 import com.askie01.petclinic.model.Vet;
 import com.askie01.petclinic.service.OwnerService;
+import com.askie01.petclinic.service.PetTypeService;
 import com.askie01.petclinic.service.VetService;
 import lombok.Data;
 import lombok.SneakyThrows;
@@ -15,6 +17,7 @@ public class DataLoader implements CommandLineRunner {
 
     private final OwnerService ownerService;
     private final VetService vetService;
+    private final PetTypeService petTypeService;
 
     /**
      * Callback used to run the bean.
@@ -25,6 +28,10 @@ public class DataLoader implements CommandLineRunner {
     @Override
     @SneakyThrows
     public void run(String... args) {
+
+        final PetType dog = petTypeService.save(new PetType("Dog"));
+        final PetType cat = petTypeService.save(new PetType("Cat"));
+
         final Owner michaelWeston = new Owner();
         michaelWeston.setFirstName("Michael");
         michaelWeston.setLastName("Weston");
