@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Data
 @Controller
-@RequestMapping("owner")
+@RequestMapping("owners")
 public class OwnerController {
 
     private final OwnerService ownerService;
 
-    @GetMapping("index")
-    public String getIndex(Model model) {
+    @GetMapping("find")
+    public String findOwners(Model model) {
         model.addAttribute("owners", ownerService.findAll());
         return "owner/index";
     }
