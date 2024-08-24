@@ -2,8 +2,6 @@ package com.askie01.petclinic.service.springdatajpa;
 
 import com.askie01.petclinic.model.Owner;
 import com.askie01.petclinic.repository.OwnerRepository;
-import com.askie01.petclinic.repository.PetRepository;
-import com.askie01.petclinic.repository.PetTypeRepository;
 import com.askie01.petclinic.service.OwnerService;
 import lombok.Data;
 import org.springframework.context.annotation.Profile;
@@ -18,8 +16,6 @@ import java.util.Set;
 public class OwnerSDJpaService implements OwnerService {
 
     private final OwnerRepository ownerRepository;
-    private final PetRepository petRepository;
-    private final PetTypeRepository petTypeRepository;
 
     @Override
     public Owner findByLastName(String lastName) {
