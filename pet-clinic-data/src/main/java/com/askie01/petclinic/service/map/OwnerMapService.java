@@ -6,19 +6,23 @@ import com.askie01.petclinic.model.PetType;
 import com.askie01.petclinic.service.OwnerService;
 import com.askie01.petclinic.service.PetService;
 import com.askie01.petclinic.service.PetTypeService;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Service
 @EqualsAndHashCode(callSuper = true)
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
+public class OwnerMapService extends AbstractMapService<Owner, Long> implements OwnerService {
 
-    private final PetService petService;
-    private final PetTypeService petTypeService;
+    private PetService petService;
+    private PetTypeService petTypeService;
 
     @Override
     public Set<Owner> findAll() {
@@ -52,7 +56,11 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
 
     @Override
     public Owner findByLastName(String lastName) {
-        return null;
+        return this.findAll()
+                .stream()
+                .filter(owner -> owner.getLastName().equalsIgnoreCase(lastName))
+                .findFirst()
+                .orElse(null);
     }
 
     private void persistPets(Owner owner) {
